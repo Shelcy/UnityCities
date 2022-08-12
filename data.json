@@ -1,0 +1,53 @@
+{
+  "campaign": "Tikyok",
+  "worldName": "test",
+  "welcome": "welcome",
+  "uiid": "0(Moderno) y 1(futurista)",
+
+  "cities": [
+    {
+      "cityName": "city1",
+      "style": "0(Moderno), 1(Futurista)",
+      "main": "0, 1 ,2 ,3",
+      "buildings": [
+        {
+          "buildingName": "nom",
+          "description": "des",
+          "url": "url"
+        },
+        {
+          "buildingName": "nom",
+          "description": "des",
+          "url": "url"
+        },
+        {
+          "buildingName": "nom",
+          "description": "des",
+          "url": "url"
+        },
+        {
+          "buildingName": "nom",
+          "description": "des",
+          "url": "url"
+        }
+      ]
+    },
+    {
+      "cityName": "city 2",
+      "style": 2,
+      "main": 2,
+      "buildings": [
+        {
+          "buildingName": "nom",
+          "description": "des",
+          "url": "url"
+        },
+        {
+          "buildingName": "nom",
+          "description": "des",
+          "url": "url"
+        }
+      ]
+    }
+  ]
+}

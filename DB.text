@@ -1,0 +1,63 @@
+USE UnityCitys;
+
+--Crear tablas
+CREATE TABLE TB_WorldType(
+		id INT IDENTITY PRIMARY KEY,
+        campaign VARCHAR(100) NOT NULL,
+        worldId INT UNIQUE NOT NULL, 
+        worldMode VARCHAR(50) NOT NULL,
+);
+
+CREATE TABLE TB_World(
+        id INT IDENTITY PRIMARY KEY, 
+		worldName VARCHAR(100) NOT NULL,
+		welcome VARCHAR(100) NOT NULL,
+        uiid INT NOT NULL,
+
+		CONSTRAINT fk_uiid FOREIGN KEY (uiid)
+        REFERENCES TB_WorldType(worldId)
+);
+
+CREATE TABLE TB_Cities(
+        id INT IDENTITY PRIMARY KEY,
+        cityName VARCHAR(100) NOT NULL,
+        style INT NOT NULL,
+		main INT NOT NULL,
+
+		CONSTRAINT fk_style FOREIGN KEY (style)
+        REFERENCES TB_WorldType(worldId)
+);
+
+CREATE TABLE TB_Buildings(
+        id INT IDENTITY PRIMARY KEY,
+        buildingName VARCHAR(100) NOT NULL,
+        description VARCHAR(100) NOT NULL,
+		url VARCHAR(250) NOT NULL,
+
+);
+
+
+--Agregar valores a tabla
+INSERT INTO TB_WorldType VALUES (0, 'Moderno'), (1, 'Futurista');
+INSERT INTO TB_World VALUES ('test', 'Mensaje Welcome', 1);
+INSERT INTO TB_World VALUES('Mundo Prueba','Mensaje Bienvenida', 1);
+
+
+
+-- ================= OTROS ============
+--Eliminar llaves foraneas
+ALTER TABLE TB_WorldType DROP CONSTRAINT TB_WorldType;
+
+--Agregar condicion unica
+ALTER TABLE TB_WorldType ADD CONSTRAINT UQ_worldId UNIQUE(worldId);
+
+
+
+--Seleccionar todo de las tablas
+SELECT* FROM TB_WorldType;
+SELECT* FROM TB_World;
+
+
+--Eliminar tablas
+--DROP TABLE TB_WorldType;
+

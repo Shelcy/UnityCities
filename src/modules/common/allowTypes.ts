@@ -1,0 +1,1 @@
+export const typesAllowed = ['semanal', 'mensual', 'trimestral', 'anual', 'rango']
