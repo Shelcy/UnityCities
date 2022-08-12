@@ -34,6 +34,6 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-.env
+# .env
 tmp/reporting/Survey Report (Flat).csv
 tmp/reporting/Training Observation Form Report.csv
